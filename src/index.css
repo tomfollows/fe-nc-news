@@ -72,3 +72,21 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
+
+.comment-card {
+  background-color: #fff; /* white background */
+  border: 1px solid #ddd; /* light gray border */
+  border-radius: 5px; /* rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* subtle shadow */
+  padding: 20px; /* space inside the box */
+  margin-bottom: 20px; /* space between boxes */
+}
+
+.individual-comment-card {
+  background-color: #fff; /* white background */
+  border: 1px solid #ddd; /* light gray border */
+  border-radius: 5px; /* rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* subtle shadow */
+  padding: 20px; /* space inside the box */
+  margin-bottom: 20px; /* space between boxes */
+}

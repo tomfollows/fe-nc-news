@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getArticle } from "../api";
 import { useParams } from "react-router-dom";
 import { dateFormat } from "../utils";
+import CommentCard from "./comment-card";
 
 const Article = () => {
   const [article, setArticle] = useState([]);
@@ -24,6 +25,7 @@ const Article = () => {
       Date: {dateFormat(article.created_at)}
       <p>Author: {article.author}</p>
       <p>{article.body}</p>
+      <CommentCard id={id}/>
     </div>
   );
 };
