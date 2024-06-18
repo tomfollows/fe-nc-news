@@ -5,6 +5,7 @@ import { dateFormat } from "../utils";
 const CommentCard = ({ id }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [votes, setVotes] = useState(0);
 
   useEffect(() => {
     getComments(id).then(({ comments }) => {
@@ -25,7 +26,6 @@ const CommentCard = ({ id }) => {
               <p> Date Posted: {dateFormat(comment.created_at)}</p>
               <h3>{comment.author}</h3>
               <p>{comment.body}</p>
-
               <p>Votes: {comment.votes}</p>
             </ul>
           );

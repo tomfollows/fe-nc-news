@@ -21,3 +21,11 @@ export const getComments = (article_id) => {
     return res.data;
   });
 };
+
+export const handleVote = (article_id, vote) => {
+  return newsAPI
+    .patch(`/articles/${article_id}`, { inc_votes: vote })
+    .then((res) => {
+      return res.data;
+    });
+};

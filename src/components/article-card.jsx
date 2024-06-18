@@ -11,7 +11,7 @@ const ArticleCard = ({ article, createdDate, onClick }) => {
   const [expanded, setExpanded] = React.useState(false);
   return (
     <Card className="cards" onClick={onClick}>
-      <CardHeader 
+      <CardHeader
         avatar={
           <Avatar>
             <img
@@ -22,11 +22,7 @@ const ArticleCard = ({ article, createdDate, onClick }) => {
         }
         title={article.title}
       />
-      <CardMedia
-        component="img"
-        height="194"
-        image={article.article_img_url}
-      />
+      <CardMedia component="img" height="194" image={article.article_img_url} />
       <CardContent className="card-content-date">
         {createdDate}
         Author: {article.author}
