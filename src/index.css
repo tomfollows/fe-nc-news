@@ -50,12 +50,25 @@ body {
 }
 
 .cards {
-  min-width: 300px; /* adjust this value to your preferred minimum width */
+  min-width: 300px;
   margin: 10px;
+  cursor: pointer;
 }
 
 .card-content-date {
   color: #666;
   font-size: 0.8rem;
   display: flex;
+}
+
+.card-expand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-votes-comments {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
