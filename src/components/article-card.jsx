@@ -8,7 +8,6 @@ import CardContent from "@mui/material/CardContent";
 import Avatar from "@mui/material/Avatar";
 
 const ArticleCard = ({ article, createdDate, onClick }) => {
-  const [expanded, setExpanded] = React.useState(false);
   return (
     <Card className="cards" onClick={onClick}>
       <CardHeader
