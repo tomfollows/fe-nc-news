@@ -1,30 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { getArticle, handleVote } from "../api";
+import { getArticle } from "../api";
 import { useParams } from "react-router-dom";
 import { dateFormat } from "../utils";
 import CommentCard from "./comment-card";
+import ArticleVotes from "./article-votes";
 
 const Article = () => {
   const [article, setArticle] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
-  const [votes, setVotes] = useState();
 
   useEffect(() => {
     setIsLoading(true);
     getArticle(id).then(({ article }) => {
       setArticle(article);
       setIsLoading(false);
-      setVotes(article.votes);
     });
   }, [id]);
 
-  const handleUpVote = () => {
-    handleVote(id).then((data) => console.log(data));
-  };
-  const handleDownVote = () => {
-    handleVote(id).then((data) => console.log(data));
-  };
+  if (!article) return <div>Loading...</div>;
 
   return (
     <div>
@@ -34,11 +28,8 @@ const Article = () => {
       Date: {dateFormat(article.created_at)}
       <p>Author: {article.author}</p>
       <p>{article.body}</p>
-      <p>{article.votes}</p>
-      <button onClick={handleUpVote}>Like</button>
-      <button onClick={handleDownVote}>Dislike</button>
+      <ArticleVotes id={id} />
       <CommentCard id={id} />
-      
     </div>
   );
 };

@@ -22,10 +22,8 @@ export const getComments = (article_id) => {
   });
 };
 
-export const handleVote = (article_id, vote) => {
-  return newsAPI
-    .patch(`/articles/${article_id}`, { inc_votes: vote })
-    .then((res) => {
-      return res.data;
-    });
+export const patchArticleVotes = (article_id, newVotes) => {
+  return newsAPI.patch(`/articles/${article_id}`, newVotes).then((res) => {
+    return res.data.article
+  });
 };
