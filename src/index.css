@@ -78,21 +78,21 @@ body {
 }
 
 .comment-card {
-  background-color: #fff; /* white background */
-  border: 1px solid #ddd; /* light gray border */
-  border-radius: 5px; /* rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* subtle shadow */
-  padding: 20px; /* space inside the box */
-  margin-bottom: 20px; /* space between boxes */
+  background-color: #fff; 
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); 
+  padding: 20px; 
+  margin-bottom: 20px; 
 }
 
 .individual-comment-card {
-  background-color: #fff; /* white background */
-  border: 1px solid #ddd; /* light gray border */
-  border-radius: 5px; /* rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* subtle shadow */
-  padding: 20px; /* space inside the box */
-  margin-bottom: 20px; /* space between boxes */
+  background-color: #fff; 
+  border: 1px solid #ddd; 
+  border-radius: 5px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); 
+  padding: 20px; 
+  margin-bottom: 20px; 
 }
 
 .like-button {
@@ -145,7 +145,7 @@ body {
 
 .like-button:disabled,
 .dislike-button:disabled {
-  background-color: #808080; /* grey */
+  background-color: #808080; 
   cursor: not-allowed;
 }
 
@@ -186,4 +186,6 @@ body {
 .comment-form__button:hover {
   background-color: #0056b3;
 }
+
+
 

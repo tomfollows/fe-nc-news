@@ -29,10 +29,30 @@ export const patchArticleVotes = (article_id, newVotes) => {
 };
 
 export const postCommentToApi = (article_id, body) => {
+  return newsAPI.post(`/articles/${article_id}/comments`, body).then((res) => {
+    return res.data.comment;
+  });
+};
+
+export const deleteCommentFromApi = (article_id) => {
   return newsAPI
-    .post(`/articles/${article_id}/comments`, body)
-    .then((res) => {
-     
-      return res.data.comment;
+    .delete(`/comments/${article_id}`)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
     });
 };
+
+export const getTopics = () => {
+  return newsAPI.get("/topics").then((res) => {
+    return res.data.topics;
+  });
+};
+
+export const getUsers = () => {
+  return newsAPI.get("/users").then((res) => {
+    return res.data.users;
+  });
+}
