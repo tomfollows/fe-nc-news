@@ -24,6 +24,15 @@ export const getComments = (article_id) => {
 
 export const patchArticleVotes = (article_id, newVotes) => {
   return newsAPI.patch(`/articles/${article_id}`, newVotes).then((res) => {
-    return res.data.article
+    return res.data.article;
   });
+};
+
+export const postCommentToApi = (article_id, body) => {
+  return newsAPI
+    .post(`/articles/${article_id}/comments`, body)
+    .then((res) => {
+     
+      return res.data.comment;
+    });
 };

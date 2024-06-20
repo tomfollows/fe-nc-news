@@ -31,6 +31,7 @@ const Article = () => {
       <ArticleVotes id={id} />
       <CommentCard id={id} />
     </div>
+  
   );
 };
 

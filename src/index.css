@@ -7,14 +7,18 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  font-family: poppins, sans-serif;
-  width: 80%;
+  font-family: Bebas Neue, sans-serif;
+  width: 100%;
 }
 
 .header {
-  background-color: white;
+  background-image: url("https://www.pappsales.com/wp-content/uploads/2023/10/follow-scaled.jpg");
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-position: center;
   max-width: 100%;
-  padding: 0 1rem;
+  height: 175px;
+  padding: 100px 0;
 }
 
 .sort-by {
@@ -28,7 +32,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  background-color: #2f24a4;
 }
 
 .avatar {
@@ -92,7 +96,7 @@ body {
 }
 
 .like-button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -103,6 +107,26 @@ body {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 12px;
+}
+
+.Nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f8f8f8;
+  height: 60px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.Nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.Nav a:hover {
+  color: #0070c9;
 }
 
 .dislike-button {
@@ -124,3 +148,42 @@ body {
   background-color: #808080; /* grey */
   cursor: not-allowed;
 }
+
+.card-votes-comments {
+  display: flex;
+  padding: 10px;
+  justify-content: flex-start;
+}
+
+.comment-form__label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.comment-form__input,
+.comment-form__textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.comment-form__textarea {
+  height: 100px;
+}
+
+.comment-form__button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.comment-form__button:hover {
+  background-color: #0056b3;
+}
+
