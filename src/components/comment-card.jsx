@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { getComments } from "../api";
 import { dateFormat } from "../utils";
+import PostComment from "./post-comment";
 
 const CommentCard = ({ id }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [votes, setVotes] = useState(0);
 
   useEffect(() => {
     getComments(id).then(({ comments }) => {
@@ -19,6 +19,7 @@ const CommentCard = ({ id }) => {
   return (
     <div>
       <h2>Comments</h2>
+      <PostComment setComments={setComments} comments={comments} id={id} />
       <ul className="comment-card">
         {comments.map((comment) => {
           return (

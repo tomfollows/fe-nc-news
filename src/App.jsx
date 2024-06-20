@@ -5,19 +5,23 @@ import Articles from "./components/articles";
 import Article from "./components/article";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import { UserContext } from "./UserContext";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Articles />} />
-        <Route path="/articles" element={<Articles />} />
-        <Route path="/articles/:id" element={<Article />} />
-      </Routes>
+  const [user, setUser] = useState("grumpy19");
 
-      <Footer />
-    </BrowserRouter>
+  return (
+    <UserContext.Provider value={{ user, setUser }}>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Articles />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/articles/:id" element={<Article />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </UserContext.Provider>
   );
 }
 
