@@ -3,11 +3,10 @@ import { postCommentToApi } from "../api";
 import Card from "react-bootstrap/Card";
 
 const PostComment = ({ id, setComments, comments }) => {
-  console.log(id);
   const [comment, setComment] = useState("");
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState("grumpy19");
 
   const handleCommentChange = (event) => {
     setComment(event.target.value);
@@ -39,8 +38,8 @@ const PostComment = ({ id, setComments, comments }) => {
         <Card.Subtitle className="mb-2 text-muted">
           Have your say...
         </Card.Subtitle>
-        
-        <form onSubmit={handleSubmit} >
+
+        <form onSubmit={handleSubmit}>
           <label className="comment-form__label">
             Username:
             <input
