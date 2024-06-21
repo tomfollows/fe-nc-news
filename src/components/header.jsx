@@ -1,6 +1,5 @@
 import Nav from "./nav";
 import { Link } from "react-router-dom";
-import SortBy from "./sortBy";
 import { getArticles } from "../api";
 import { useEffect, useState } from "react";
 import { UserContext } from "../UserContext";
@@ -16,7 +15,6 @@ const Header = () => {
       <Link to="/"></Link>
       </div>
       <Nav />
-      <SortBy />
    </div>
   );
 };

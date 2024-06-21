@@ -32,7 +32,29 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2f24a4;
+  padding: 10px;
+  background-color: #f8f8f8;
+  height: 60px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.Nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.Nav a:hover {
+  color: #0070c9;
+}
+
+.Nav select {
+  padding: 5px;
+  font-size: 1rem;
+  margin-left: 20px;
 }
 
 .avatar {
@@ -42,9 +64,9 @@ body {
 }
 
 .articles-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
 }
 
 .articles-grid .MuiCard-root {
@@ -75,84 +97,48 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding: 10px;
 }
 
-.comment-card {
-  background-color: #fff; 
+.comment-card,
+.individual-comment-card {
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); 
-  padding: 20px; 
-  margin-bottom: 20px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
-.individual-comment-card {
-  background-color: #fff; 
-  border: 1px solid #ddd; 
-  border-radius: 5px; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); 
-  padding: 20px; 
-  margin-bottom: 20px; 
+.like-button,
+.dislike-button {
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
 }
 
 .like-button {
   background-color: #4caf50;
   border: none;
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 12px;
-}
-
-.Nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #f8f8f8;
-  height: 60px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-}
-
-.Nav a {
-  color: #333;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.2s ease;
-}
-
-.Nav a:hover {
-  color: #0070c9;
 }
 
 .dislike-button {
   background-color: #f80404;
   border: none;
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 12px;
 }
 
 .like-button:disabled,
 .dislike-button:disabled {
-  background-color: #808080; 
+  background-color: #808080;
   cursor: not-allowed;
-}
-
-.card-votes-comments {
-  display: flex;
-  padding: 10px;
-  justify-content: flex-start;
 }
 
 .comment-form__label {
@@ -187,5 +173,28 @@ body {
   background-color: #0056b3;
 }
 
+.controllers-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
 
+.controllers-wrapper label {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  font-weight: bold;
+}
 
+.controllers-wrapper select {
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.Loading {
+  font-size: 1.5rem;
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}
