@@ -32,7 +32,7 @@ const PostComment = ({ id, setComments, comments }) => {
   };
 
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card>
       <Card.Body>
         <Card.Title></Card.Title>
         <Card.Subtitle className="mb-2 text-muted">
@@ -43,6 +43,7 @@ const PostComment = ({ id, setComments, comments }) => {
           <label className="comment-form__label">
             Username:
             <input
+              style={{ width: "15%" }}
               type="text"
               name="username"
               value={user}
