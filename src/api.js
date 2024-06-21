@@ -5,54 +5,38 @@ const newsAPI = axios.create({
 });
 
 export const getArticles = () => {
-  return newsAPI.get("/articles").then((res) => {
-    return res.data;
-  });
+  return newsAPI.get("/articles").then((res) => res.data).catch(handleError);
 };
 
 export const getArticle = (article_id) => {
-  return newsAPI.get(`/articles/${article_id}`).then((res) => {
-    return res.data;
-  });
+  return newsAPI.get(`/articles/${article_id}`).then((res) => res.data).catch(handleError);
 };
 
 export const getComments = (article_id) => {
-  return newsAPI.get(`/articles/${article_id}/comments`).then((res) => {
-    return res.data;
-  });
+  return newsAPI.get(`/articles/${article_id}/comments`).then((res) => res.data).catch(handleError);
 };
 
 export const patchArticleVotes = (article_id, newVotes) => {
-  return newsAPI.patch(`/articles/${article_id}`, newVotes).then((res) => {
-    return res.data.article;
-  });
+  return newsAPI.patch(`/articles/${article_id}`, newVotes).then((res) => res.data.article).catch(handleError);
 };
 
 export const postCommentToApi = (article_id, body) => {
-  return newsAPI.post(`/articles/${article_id}/comments`, body).then((res) => {
-    return res.data.comment;
-  });
+  return newsAPI.post(`/articles/${article_id}/comments`, body).then((res) => res.data.comment).catch(handleError);
 };
 
 export const deleteCommentFromApi = (article_id) => {
-  return newsAPI
-    .delete(`/comments/${article_id}`)
-    .then((response) => {
-      return response.data;
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  return newsAPI.delete(`/comments/${article_id}`).then((res) => res.data).catch(handleError);
+};
+
+export const getArticlesByTopic = (topic) => {
+  return newsAPI.get("/articles", { params: { topic } }).then((res) => res.data.articles).catch(handleError);
 };
 
 export const getTopics = () => {
-  return newsAPI.get("/topics").then((res) => {
-    return res.data.topics;
-  });
+  return newsAPI.get("/topics").then((res) => res.data.topics).catch(handleError);
 };
 
-export const getUsers = () => {
-  return newsAPI.get("/users").then((res) => {
-    return res.data.users;
-  });
-}
+const handleError = (error) => {
+  console.error("API Error:", error);
+  throw error;
+};

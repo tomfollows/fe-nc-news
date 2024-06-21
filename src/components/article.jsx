@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getArticle } from "../api";
+import { getArticle, getArticlesByTopic } from "../api";
 import { useParams } from "react-router-dom";
 import { dateFormat } from "../utils";
 import CommentCard from "./comment-card";
@@ -7,7 +7,7 @@ import ArticleVotes from "./article-votes";
 
 const Article = () => {
   const [article, setArticle] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
 
   useEffect(() => {
@@ -31,7 +31,6 @@ const Article = () => {
       <ArticleVotes id={id} />
       <CommentCard id={id} />
     </div>
-  
   );
 };
 

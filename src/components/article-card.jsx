@@ -1,10 +1,8 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-
 import Avatar from "@mui/material/Avatar";
 
 const ArticleCard = ({ article, createdDate, onClick }) => {
@@ -21,6 +19,7 @@ const ArticleCard = ({ article, createdDate, onClick }) => {
         }
         title={article.title}
       />
+
       <CardMedia component="img" height="194" image={article.article_img_url} />
       <CardContent className="card-content-date">
         {createdDate}
