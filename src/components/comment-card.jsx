@@ -9,6 +9,7 @@ const CommentCard = ({ id }) => {
   const {user} = useContext(UserContext);
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
 
   useEffect(() => {
@@ -24,7 +25,7 @@ const CommentCard = ({ id }) => {
         setComments((currentComments) => currentComments.filter((comment) => comment.comment_id !== id));
       })
       .catch((error) => {
-        console.error('Error:', error);
+        setError("Error deleting comment");
       });
   
   };

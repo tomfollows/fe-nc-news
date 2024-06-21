@@ -6,6 +6,7 @@ import Article from "./components/article";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import { UserContext } from "./UserContext";
+import TopicArticles from "./components/topics-articles";
 
 function App() {
   const [user, setUser] = useState("grumpy19");
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Articles />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:id" element={<Article />} />
+          <Route path="/topics/:topic" element={<TopicArticles />} />
         </Routes>
         <Footer />
       </BrowserRouter>
